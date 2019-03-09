@@ -4,7 +4,7 @@ name: gateway
 packages: []
 
 templates:
-  bin/gateway_ctl.erb: bin/gateway_ctl
+  bin/pre-start.erb: bin/pre-start
 
 properties:
   networking.gateway.default:

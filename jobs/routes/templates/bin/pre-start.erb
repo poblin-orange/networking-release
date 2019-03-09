@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -e # exit immediately if a simple command exits with a non-zero status
+
+list_routes() {
+    echo "*** $(date) Current routes:"
+    /sbin/route --verbose --numeric
+}
+
+update_routes() {
+    list_routes
+
+    echo "*** $(date) ${1} route:"
+    set +e
+    /sbin/route --verbose ${1} ${2}
+    set -e
+
+    list_routes
+}
+
+echo "****** $(date) ${0} start"
+<% p('networking.routes', []).each do |route|
+     route_command = ""
+     route_command += " -net #{route['net']}"        if route['net']
+     route_command += " -host #{route['host']}"      if route['host']
+     route_command += " netmask #{route['netmask']}" if route['netmask']
+     route_command += " gw #{route['gateway']}"      if route['gateway']
+     route_command += " metric #{route['metric']}"   if route['metric']
+     route_command += " mss #{route['mss']}"         if route['mss']
+     route_command += " window #{route['window']}"   if route['window']
+     route_command += " irtt #{route['irtt']}"       if route['irtt']
+     route_command += " dev #{route['interface']}"   if route['interface']
+%>
+# Add route
+update_routes add "<%= route_command %>"
+<% end %>

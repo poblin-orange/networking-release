@@ -4,7 +4,7 @@ name: routes
 packages: []
 
 templates:
-  bin/routes_ctl.erb: bin/routes_ctl
+  bin/pre-start.erb: bin/pre-start
 
 properties:
   networking.routes:
