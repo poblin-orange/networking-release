@@ -10,7 +10,7 @@ list_routes() {
 update_routes() {
     list_routes
     # If we are in if-up.d folder and interface has been set we only run it when this interface is up
-    if [[ "${IFACE}" != "" ]] && [[ "$1" != "" ]] && [[ "$IFACE" != "$1" ]]; then
+    if [[ "${IFACE}" != "" ]] && [[ "$3" != "" ]] && [[ "$IFACE" != "$3" ]]; then
       return 0
     fi
     echo "*** $(date) ${1} route:"
