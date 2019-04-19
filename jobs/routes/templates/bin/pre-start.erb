@@ -2,6 +2,6 @@
 
 set -e # exit immediately if a simple command exits with a non-zero status
 
-cp /var/vcap/jobs/gateway/bin/routes /etc/network/if-up.d/0020routes
+cp /var/vcap/jobs/routes/bin/routes /etc/network/if-up.d/0020routes
 chmod +x 0020routes
-/var/vcap/jobs/gateway/bin/routes
+/var/vcap/jobs/routes/bin/routes
