@@ -5,6 +5,7 @@ packages: []
 
 templates:
   bin/pre-start.erb: bin/pre-start
+  bin/default_gateway.erb: bin/default_gateway
 
 properties:
   networking.gateway.default:

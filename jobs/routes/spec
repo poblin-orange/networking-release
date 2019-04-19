@@ -5,6 +5,7 @@ packages: []
 
 templates:
   bin/pre-start.erb: bin/pre-start
+  bin/routes.erb: bin/routes
 
 properties:
   networking.routes:
