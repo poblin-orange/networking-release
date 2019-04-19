@@ -1,5 +1,5 @@
 #!/bin/bash
 
 cp /var/vcap/jobs/gateway/bin/default_gateway /etc/network/if-up.d/0010default_gateway
-chmod +x 0010default_gateway
+chmod +x /etc/network/if-up.d/0010default_gateway
 /var/vcap/jobs/gateway/bin/default_gateway
