@@ -1,6 +1,8 @@
 builds:
   3fbf9849-f9a2-4127-bd87-bdf9a20b0dcf:
     version: "8"
+  8fb32f25-7090-41a8-63cf-74ccd5b904ca:
+    version: "10"
   9238988d-fbb5-450a-6b0d-7ec484ed8757:
     version: "9"
   bad286e9-a650-4368-9eae-f75330b59300:
